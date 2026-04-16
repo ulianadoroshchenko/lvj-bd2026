@@ -1,0 +1,114 @@
+@import url("style.css");
+
+/* === ГЛОБАЛЬНЫЙ ФОН === */
+body {
+  background: url("fon-gugo.jpg") center/cover fixed no-repeat;
+  color: #e5e8d8;
+}
+
+/* затемняющая подложка, чтобы текст читался */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 26, 17, 0.537); /* глубокий зелёный туман */
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+/* === МЕСЯЦЫ === */
+.month {
+  background: rgba(10, 25, 20, 0.85);
+  border: 1px solid #8f7f4a; /* золото */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+}
+
+/* === ЗАГОЛОВОК МЕСЯЦА === */
+.month-title {
+  color: #d4c68a; /* мягкое золото */
+  text-shadow: 0 0 6px rgba(212, 198, 138, 0.4);
+}
+
+/* === ДНИ === */
+.day {
+  background: rgba(20, 40, 32, 0.8);
+  color: #e5e8d8;
+  border: 1px solid rgba(143, 127, 74, 0.25); /* золотистая рамка */
+  transition: 0.2s;
+}
+
+.day:hover {
+  background: rgba(35, 70, 55, 0.9);
+  border-color: rgba(212, 198, 138, 0.45);
+  box-shadow: 0 0 8px rgba(212, 198, 138, 0.25);
+}
+
+/* === МОДАЛКА === */
+.modal-content {
+  background: rgba(10, 25, 20, 0.9);
+  border: 1px solid #8f7f4a;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+  color: #e5e8d8;
+}
+
+/* === КНОПКИ === */
+.add-event-btn,
+.toggle-form-btn {
+  background: rgba(35, 70, 55, 0.9);
+  color: #e5e8d8;
+  border: 1px solid #8f7f4a;
+  border-radius: 8px;
+}
+
+.add-event-btn:hover,
+.toggle-form-btn:hover {
+  background: rgba(50, 100, 80, 0.95);
+  border-color: #d4c68a;
+}
+
+/* === СПИСОК СОБЫТИЙ === */
+.event-item {
+  background: rgba(20, 40, 32, 0.85);
+  border-left: 6px solid var(--event-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.event-item-title {
+  color: #d4c68a;
+}
+
+.event-item-meta {
+  color: #b8b08a;
+}
+
+.event-item-description {
+  color: #e5e8d8;
+}
+
+/* === ФИЛЬТРЫ === */
+.filters {
+  background: rgba(10, 25, 20, 0.85);
+  border-color: #8f7f4a;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* === КАРТИНКА === */
+.header-image-wrapper {
+  border-color: #8f7f4a;
+  background: rgba(10, 25, 20, 0.85);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* === КНОПКА УДАЛЕНИЯ === */
+.delete-event-btn {
+  background: #5a2a2a;
+  color: #ffcccc;
+  border: 1px solid #a05a5a;
+}
+
+.delete-event-btn:hover {
+  background: #7a3a3a;
+  color: #fff;
+}

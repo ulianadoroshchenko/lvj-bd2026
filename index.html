@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Интерактивный календарь</title>
+  <link id="theme-style" rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Верхний блок с рандомной картинкой -->
+<div class="top-panel">
+
+  <div class="filters-panel">
+
+  <!-- Панель фильтров -->
+  <section class="filters">
+    <div class="filter-group">
+      <h2>Человек</h2>
+      <label><input type="radio" name="person" value="all" checked> Все</label><br>
+      <label><input type="radio" name="person" value="Гюго"> Гюго</label><br>
+      <label><input type="radio" name="person" value="Хелена"> Хелена</label><br>
+      <label><input type="radio" name="person" value="Елена"> Елена</label><br>
+    </div>
+
+    <div class="filter-group">
+      <h2>Тип события</h2>
+      <label><input type="checkbox" name="type" value="личное" checked> Личное</label>
+      <label><input type="checkbox" name="type" value="день рождения" checked> День рождения</label><br>
+      <label><input type="checkbox" name="type" value="праздник" checked> Праздник</label>
+      <label><input type="checkbox" name="type" value="джунгарики" checked> Джунгарики</label><br>
+      <label><input type="checkbox" name="type" value="мероприятие" checked> Мероприятие</label>
+      <label><input type="checkbox" name="type" value="когтевран" checked> Когтевран</label>
+    </div>
+  </section>
+    </div>
+
+      <div class="header-image-wrapper">
+    <img id="header-image" class="header-image" src="" alt="Картинка дня">
+     </div>
+</div>
+
+ <div id="event-form-wrapper" class="event-form-wrapper hidden"></div>
+  
+  <!-- Контейнер для всего календаря по месяцам -->
+  <main class="calendar-container" id="calendar-container">
+    <!-- Сюда JS будет генерировать месяцы и дни -->
+  </main>
+
+  <!-- Модальное окно для просмотра/добавления событий -->
+  <div class="modal" id="event-modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" id="modal-close">&times;</button>
+
+    <h2 id="modal-date-title">События на дату</h2>
+
+    <!-- Список событий -->
+    <div id="events-list" class="events-list"></div>
+
+    <!-- Кнопка добавить -->
+    <button id="add-event-btn" class="add-event-btn">+ Добавить событие</button>
+
+    <!-- Форма добавления события (скрытая) -->
+    <div id="modal-form-wrapper" class="modal-form-wrapper hidden">
+      <form id="modal-event-form">
+        <label>
+          Для кого:
+          <select id="modal-person" required>
+            <option value="Гюго">Гюго</option>
+            <option value="Хелена">Хелена</option>
+            <option value="Елена">Елена</option>
+          </select>
+        </label>
+
+        <label>
+          Тип:
+          <select id="modal-type" required>
+            <option value="личное">Личное</option>
+            <option value="день рождения">День рождения</option>
+            <option value="праздник">Праздник</option>
+            <option value="джунгарики">Джунгарики</option>
+            <option value="мероприятие">Мероприятие</option>
+            <option value="когтевран">Когтевран</option>
+          </select>
+        </label>
+
+        <label>
+          Заголовок:
+          <input type="text" id="modal-title" required>
+        </label>
+
+        <label>
+          Описание:
+          <textarea id="modal-description" rows="3"></textarea>
+        </label>
+
+        <button type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
